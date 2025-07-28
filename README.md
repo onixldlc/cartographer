@@ -2,6 +2,21 @@
 
 A web-based tool for converting images into Minecraft map-art, formatted in a variety of ways (most commonly in the `litematica` format). These schematics can then be used as a blueprint for building map-art in Minecraft.
 
+## Usage
+
+to run the project you can install dependency and build the project by running:
+
+```sh
+pnpm install && pnpm run build
+```
+
+then you can serve the project by moving to the `./interface` folder, then run `npm start`
+
+```sh
+cd ./interface
+pnpm run start
+```
+
 ## About
 
 There are already some good implementations/alternatives to this tool out in the wild, most notably being [mapartcraft](https://rebane2001.com/mapartcraft/), however I found their interfaces very clunky to work in and hard to iterate fluidly on a map-art idea. I also wanted to add features that were missing and add support for outputting in alternative data formats such as `.litematic` files for the excellent [Litematica](https://github.com/maruohon/litematica) mod.
