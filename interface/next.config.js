@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: 'build',
+  distDir: "build",
   reactStrictMode: true,
   swcMinify: true,
-
+  output: "standalone",
+  
   compiler: {
     styledComponents: true
   }
