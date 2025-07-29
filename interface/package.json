@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "watch": "next dev",
-    "build": "cd ../ && pnpm run build",
+    "build": "cd ../ && pnpm build:packages && next build",
     "start": "next start"
   },
   "dependencies": {
