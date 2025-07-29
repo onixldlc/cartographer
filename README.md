@@ -11,7 +11,7 @@ pnpm install && pnpm run build
 ```
 
 ### pnpm
-then you can serve the project by moving to the `./interface` folder, then run `npm start`
+then you can serve the project by moving to the `./interface` folder, then run `pnpm start`
 ```sh
 cd ./interface
 pnpm run start
