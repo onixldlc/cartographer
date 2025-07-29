@@ -1,20 +1,22 @@
-FROM node:18-alpine
-
+FROM node:18-alpine AS builder
 WORKDIR /app
-RUN apk add neovim
-
 COPY . .
 
 RUN npm install -g pnpm@latest
 RUN pnpm install && npm run build
 
-## fixed static not being added to standalone
-#  for some reason nextjs doesn't automatically do this ?
-#  maybe the config is cooked ? :/
+## temporary fix:
+#  for some reason nextjs doesn't automatically move
+#  static folder into the standalone/build/ folder...
+#  so we do it manually here
 WORKDIR /app/interface/
 RUN cp -r ./build/static ./build/standalone/build
 
-WORKDIR /app/interface/build/standalone
+
+
+FROM node:18-alpine AS runner
+COPY --from=builder /app/interface/build/standalone /app
+WORKDIR /app
 
 ENTRYPOINT ["node"]
 CMD ["server.js"]
