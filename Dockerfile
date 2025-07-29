@@ -7,15 +7,15 @@ RUN pnpm install && pnpm run build
 
 ## temporary fix:
 #  for some reason nextjs doesn't automatically move
-#  static folder into the standalone/build/ folder...
+#  static folder into the standalone/.next/ folder...
 #  so we do it manually here
 WORKDIR /app/interface/
-RUN cp -r ./build/static ./build/standalone/build
+RUN cp -r ./.next/static ./.next/standalone/.next
 
 
 
 FROM node:18-alpine AS runner
-COPY --from=builder /app/interface/build/standalone /app
+COPY --from=builder /app/interface/.next/standalone /app
 WORKDIR /app
 
 ENTRYPOINT ["node"]
