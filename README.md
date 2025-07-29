@@ -37,6 +37,12 @@ docker build . -t cartographer:latest
 docker run --rm -p 3000:3000 --name cartographer -it cartographer:latest
 ``` 
 
+or even better, just `up` it
+
+```sh
+docker compose up -d
+```
+
 ## About
 
 There are already some good implementations/alternatives to this tool out in the wild, most notably being [mapartcraft](https://rebane2001.com/mapartcraft/), however I found their interfaces very clunky to work in and hard to iterate fluidly on a map-art idea. I also wanted to add features that were missing and add support for outputting in alternative data formats such as `.litematic` files for the excellent [Litematica](https://github.com/maruohon/litematica) mod.
