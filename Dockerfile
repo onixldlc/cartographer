@@ -3,7 +3,7 @@ WORKDIR /app
 COPY . .
 
 RUN npm install -g pnpm@latest
-RUN pnpm install && npm run build
+RUN pnpm install && pnpm run build
 
 ## temporary fix:
 #  for some reason nextjs doesn't automatically move
