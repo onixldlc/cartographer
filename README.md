@@ -4,18 +4,30 @@ A web-based tool for converting images into Minecraft map-art, formatted in a va
 
 ## Usage
 
-to run the project you can install dependency and build the project by running:
-
+### setup
+to build the project for the standalone version or to run it, you can install dependency and build the project by running these command:
 ```sh
 pnpm install && pnpm run build
 ```
 
+### pnpm
 then you can serve the project by moving to the `./interface` folder, then run `npm start`
-
 ```sh
 cd ./interface
 pnpm run start
 ```
+
+### standalone
+or to use the standalone version of the project you can move the the `./interface/build/standalone` folder then run the `server.js` like so :
+```sh
+cp -r ./interface/build/static ./interface/build/standalone/build
+cd ./interface/build/standalone
+node ./server.js
+```
+> [!WARNING]
+> for some reason nextjs doesn't automatically move static folder from the build
+> folder into the `./standalone/build` folder, so be sure to add the 
+> `build/static` in to the `build/standalone/build` folder
 
 ## About
 
