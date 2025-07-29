@@ -10,14 +10,14 @@ to build the project for the standalone version or to run it, you can install de
 pnpm install && pnpm run build
 ```
 
-### pnpm
+#### pnpm
 then you can serve the project by moving to the `./interface` folder, then run `pnpm start`
 ```sh
 cd ./interface
 pnpm run start
 ```
 
-### standalone
+#### standalone
 or to use the standalone version of the project you can move the the `./interface/build/standalone` folder then run the `server.js` like so :
 ```sh
 cp -r ./interface/build/static ./interface/build/standalone/build
@@ -28,6 +28,14 @@ node ./server.js
 > for some reason nextjs doesn't automatically move static folder from the build
 > folder into the `./standalone/build` folder, so be sure to add the 
 > `build/static` in to the `build/standalone/build` folder
+
+### docker
+or skip everything and just deploy with docker
+```sh
+docker image rm cartographer:latest    #remove existing cartographer image
+docker build . -t cartographer:latest
+docker run --rm -p 3000:3000 --name cartographer -it cartographer:latest
+``` 
 
 ## About
 
