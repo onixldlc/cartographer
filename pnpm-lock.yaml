@@ -111,7 +111,7 @@ importers:
   packages/block-palettes:
     dependencies:
       '@cartographer/pixels':
-        specifier: ^0.0.1
+        specifier: "workspace:*"
         version: link:../pixels
 
   packages/generation:
