@@ -18,7 +18,7 @@ pnpm run start
 ```
 
 #### standalone
-or to use the standalone version of the project you can move the the `./interface/build/standalone` folder then run the `server.js` like so :
+or to use the standalone version of the project you can move to the `./interface/build/standalone` folder then run the `server.js` like so :
 ```sh
 cp -r ./interface/build/static ./interface/build/standalone/build
 cd ./interface/build/standalone
@@ -27,7 +27,7 @@ node ./server.js
 > [!WARNING]
 > for some reason nextjs doesn't automatically move static folder from the build
 > folder into the `./standalone/build` folder, so be sure to add the 
-> `build/static` in to the `build/standalone/build` folder
+> `build/static` into the `build/standalone/build` folder
 
 ### docker
 or skip everything and just deploy with docker
